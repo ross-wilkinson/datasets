@@ -16,7 +16,7 @@ import pandas as pd
 from pymer4.models import Lmer
 
 ### Load dataset
-df = pd.read_csv('https://github.com/ross-wilkinson/datasets/blob/main/gripNoGrip/gripNoGrip.csv')
+df = pd.read_csv('gripNoGrip.csv')
 
 ### Fit Linear Mixed-Effects Model
 model = Lmer('MaxPowerCycle ~ Posture + Grip + (1+Posture|Subject) + (1+Grip|Subject)', data=df)
