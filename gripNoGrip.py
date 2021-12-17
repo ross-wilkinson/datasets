@@ -19,12 +19,11 @@ from pymer4.models import Lmer
 df = pd.read_csv('gripNoGrip.csv')
 
 ### Fit Linear Mixed-Effects Model
-model = Lmer('MaxPowerCycle ~ Posture + Grip + (1+Posture|Subject) + (1+Grip|Subject)', data=df)
+model = Lmer('MaxPowerCycle ~ Posture * Grip + (1+Posture|Subject) + (1+Grip|Subject)', data=df)
 mdf = model.fit()
 model.summary()
 
 ### Plot model parameters
-model.plot_summary()
-model.plot('Posture')
-model.plot('Grip')
-
+#model.plot_summary()
+#model.plot('Posture')
+#model.plot('Grip')
